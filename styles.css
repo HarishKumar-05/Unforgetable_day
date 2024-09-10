@@ -10,7 +10,7 @@ body {
   background-image: url('moon.png'); /* Background image from upload */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat:calc();
   color: pink;
 }
 
