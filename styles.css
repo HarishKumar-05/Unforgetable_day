@@ -1,0 +1,146 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Tangerine', cursive;
+  background-image: url('moon.png'); /* Background image from upload */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: pink;
+}
+
+/* Container and Cards */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1); /* Slightly more transparent background for better contrast */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  width: calc(50% - 40px);
+  border: 3px solid rgba(255, 192, 203, 0.8); /* Adjusted glassy border for better visibility */
+  box-shadow: 0 0 15px rgba(255, 192, 203, 0.8), 0 0 25px rgba(255, 192, 203, 1); /* Glitter effect with brighter pink */
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  display: none;
+}
+
+.card-content h2 {
+  font-weight: bold; /* Bold text for clarity */
+  font-size: 40px; /* Larger text size */
+  color: rgba(255, 20, 147, 1); /* Adjusted to a deeper pink for visibility */
+  text-shadow: 2px 2px 5px rgb(0, 0, 0,0.7); /* Dark shadow for contrast */
+  text-align: center;
+}
+
+.card-content p {
+  color: rgba(255, 20, 147, 1); /* Same deep pink for p elements */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adding text-shadow for better visibility */
+  text-align: center;
+}
+
+/* Heart Popups */
+#hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  animation: pop 1s forwards;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.heart-button {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.heart-button:hover {
+  background-color: #f7f7f7;
+  transform: scale(1.1);
+}
+
+.heart-button:active {
+  background-color: #fff;
+  transform: scale(0.9);
+}
+
+/* Snowflake Animation */
+.snowflake {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: snowflake-fall 5s infinite;
+}
+
+@keyframes snowflake-fall {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Fade In and Out Effects */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fadeIn {
+  animation: fadeIn 1s forwards;
+  display: block;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fadeOut {
+  animation: fadeOut 1s forwards;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: calc(100% - 40px);
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  h2 {
+    font-size: 32px;
+  }
+}
