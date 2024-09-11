@@ -1,21 +1,19 @@
-const cards = document.querySelectorAll('.card');
-const heartButtons = document.querySelectorAll('.heart-button');
+const cards = document.querySelectorAll('.glass-card');
+const heartButton = document.querySelector('.heart-button');
 const heartsContainer = document.getElementById('hearts');
 
 let currentCard = 0;
 cards[currentCard].classList.add('fadeIn'); // Show the first card initially
 
-heartButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    cards[currentCard].classList.add('fadeOut');
-    setTimeout(() => {
-      cards[currentCard].classList.remove('fadeOut');
-      cards[currentCard].style.display = 'none';
-      currentCard = (currentCard + 1) % cards.length;
-      cards[currentCard].classList.add('fadeIn');
-      createHeartPopup();
-    }, 500);
-  });
+heartButton.addEventListener('click', () => {
+  cards[currentCard].classList.add('fadeOut');
+  setTimeout(() => {
+    cards[currentCard].classList.remove('fadeOut');
+    cards[currentCard].style.display = 'none';
+    currentCard = (currentCard + 1) % cards.length;
+    cards[currentCard].classList.add('fadeIn');
+    createHeartPopup();
+  }, 500);
 });
 
 function createHeartPopup() {
